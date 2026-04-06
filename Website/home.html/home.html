@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GROUP 8 CLOTHING BRAND</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f6f6f6;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+.nav-left {
+  
+  display: flex;
+}
+
+.nav-left span {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.hero {
+  height: 200px;
+  background: #ba0606;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.categories {
+  text-align: center;
+  margin: 20px;
+}
+
+.categories button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  background: rgb(226, 226, 226);
+  color: rgb(255, 0, 0);
+}
+
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #981c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+button {
+  background: rgb(99, 99, 99);
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  border: none;
+  margin: 5px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.form {
+  padding: 20px;
+}
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+
+<div class="navbar">
+  <div class="nav-left">
+    <span onclick="show('shop')">Shop</span>
+    <span onclick="filter('all')">Collections</span>
+    <span onclick="show('about')">About</span>
+<span onclick="show('faq')">FAQ</span>
+<span onclick="show('contact')">Contact</span>
+<span onclick="show('service')">Customer Service</span>
+    <span></span>
+  </div>
+
+  <div class="logo">R I C H B O Y Z</div>
+
+  <div>
+    <span onclick="show('login')">👤</span>
+    <span onclick="show('cart')">🛒</span>
+  </div>
+</div>
+
+
+<div class="hero">
+  <h2>R I C H B O Y Z</h2>
+  <img src="https://static.wixstatic.com/media/941bee_c26daf978cdd4de2bd75f6483c32755d~mv2.png/v1/fill/w_980,h_491,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Article%20Banner%20%20(2).png" style="width:300px;margin-left:20px">
+</div>
+
+
+<div class="categories">
+  <button onclick="filter('all')" class="active">All Products</button>
+    <button onclick="filter('tshirt')">T-Shirts</button>
+  <button onclick="filter('hoodie')">Hoodies</button>
+  <button onclick="filter('bottoms')">Bottoms</button>
+</div>
+
+
+<div id="shop" class="products">
+
+    <div class="card" data-cat="tshirt">
+  <img src="https://richboyz.com/cdn/shop/files/DST-CB-FRONT1.webp?v=1764750743&width=1000">
+  <h4>Drop Shoulder Tee - Classic Black</h4>
+  <p>₱1,300</p>
+  <select class="size">
+  <option value="">Select Size</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
+  <button onclick="add(this,'Drop Shoulder Tee - Classic Black',1300)">Add</button>
+</div>
+
+<div class="card" data-cat="tshirt">
+  <img src="https://richboyz.com/cdn/shop/files/club-tee-white-1.webp?v=1774582411&width=1000">
+  <h4>Club Tee - White</h4>
+  <p>₱1,600</p>
+  <select class="size">
+  <option value="">Select Size</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
+  <button onclick="add(this,'Club Tee - White',1600)">Add</button>
+</div>
+<div class="card" data-cat="tshirt">
+  <img src="https://richboyz.com/cdn/shop/files/BOX-TEE-SANGRIA-FRONT1.webp?v=1764748098&width=1000">
+  <h4>Box Tee - Sangria</h4>
+  <p>₱1,400</p>
+  <select class="size">
+  <option value="">Select Size</option>
+  <option value="S">S</option>
+  <option value="M">M</option>
+  <option value="L">L</option>
+  <option value="XL">XL</option>
+</select>
+  <button onclick="add(this,'Box Tee - Sangria',1400)">Add</button>
+</div>
+  
+  <div class="card" data-cat="hoodie">
+    <img src="https://richboyz.com/cdn/shop/files/HOODIE-F1.webp?v=1770790400&width=1000">
+    <h4>Double Zip Lite Hoodie - Lupin</h4>
+    <p>₱3,300</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Double Zip Lite Hoodie - Lupin',3300)">Add</button>
+  </div>
+
+  <div class="card" data-cat="hoodie">
+    <img src="https://richboyz.com/cdn/shop/files/Airy-Quarter-Zip-Hoodie-Khaki-1.webp?v=1774582300&width=1000">
+    <h4>Airy Quarter Zip Hoodie - Khaki</h4>
+    <p>₱3,500</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Airy Quarter Zip Hoodie - Khaki',3500)">Add</button>
+  </div>
+  <div class="card" data-cat="hoodie">
+    <img src="https://richboyz.com/cdn/shop/files/HOODIE-BLACK-FRONT1.webp?v=1764731655&width=1000">
+    <h4>Zip Motion Hoodie - Black</h4>
+    <p>₱4,199</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Zip Motion Hoodie - Black',4199)">Add</button>
+  </div>
+  <div class="card" data-cat="hoodie">
+    <img src="https://richboyz.com/cdn/shop/files/HOODIE-BLACK-FRONT1_0fdc208d-a19e-49f3-a823-d3b46788ee33.webp?v=1768881053&width=1000">
+    <h4>Double Zip Box Hoodie - Black</h4>
+    <p>₱3,899</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Double Zip Box Hoodie - Black',3899)">Add</button>
+  </div>
+
+  <div class="card" data-cat="tshirt">
+    <img src="https://richboyz.com/cdn/shop/files/BOX-TEE-SHADOW-FRONT.jpg?v=1764748786&width=1000">
+    <h4>Premium Box Tee - Shadow</h4>
+    <p>₱1,899</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Premium Box Tee - Shadow',1899)">Add</button>
+  </div>
+
+  <div class="card" data-cat="bottoms">
+    <img src="https://richboyz.com/cdn/shop/files/denim-pants-mud-front.webp?v=1756279869&width=1000">
+    <h4>Demin Pants - Mud</h4>
+    <p>₱4,500</p>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+    <button onclick="add(this,'Demin Pants - Mud',4500)">Add</button>
+  </div>
+  <div class="card" data-cat="bottoms">
+  <img src="https://richboyz.com/cdn/shop/files/WIDE-LEG-SWEATPANTS-JADE-F_1.webp?v=1768877493&width=1000">
+  <h4>Sweat Pants - Jade</h4>
+  <p>₱2,000</p>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  <button onclick="add(this,'Sweat Pants - Jade',2000)">Add</button>
+</div>
+<div class="card" data-cat="bottoms">
+  <img src="https://richboyz.com/cdn/shop/files/SHORTS-HG-F1.webp?v=1768898824&width=1000">
+  <h4>Sweat Shorts - Hunter Green</h4>
+  <p>₱1,500</p>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  <button onclick="add(this,'Sweat Shorts - Hunter Green',1300)">Add</button>
+</div>
+<div class="card" data-cat="bottoms">
+  <img src="https://richboyz.com/cdn/shop/files/Airy-lounge-pants-navy-blue-1.webp?v=1774582260&width=1000">
+  <h4>Airy Lounge Pants - Navy Blue</h4>
+  <p>₱2,400</p>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+  </select>
+  <button onclick="add(this,'Airy Lounge Pants - Navy Blue',2400)">Add</button>
+</div>
+
+</div>
+
+
+<div id="cart" class="hidden form">
+  <h2>Cart</h2>
+  <div id="items"></div>
+  <h3 id="total"></h3>
+
+  <h3>Checkout</h3>
+  <input id="Full Name" placeholder="Full Name">
+  <input id="Address" placeholder="Address">
+  <input id="Phone Number" placeholder="Phone">
+  <button onclick="checkout()">Checkout</button>
+</div>
+
+
+<div id="login" class="hidden form">
+  <h2>Login</h2>
+  <input id="luser" placeholder="Username">
+  <input id="lpass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <h3>Sign Up</h3>
+  <input id="suser" placeholder="Username">
+  <input id="spass" type="password" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
+</div>
+<div id="about" class="hidden form">
+  <h2>About Us</h2>
+  <p>
+    RICH BOYZ is a streetwear brand focused on premium quality and modern style.
+    Our goal is to bring confidence and identity through fashion.
+  </p>
+</div>
+<div id="service" class="hidden form">
+  <h2>Customer Service</h2>
+  <p>Need help? We got you.</p>
+
+  <ul>
+    <li> Order Tracking</li>
+    <li> Returns & Exchanges</li>
+    <li> Payment Issues</li>
+  </ul>
+
+  <p>Email us: support@richboyz.com</p>
+</div>
+<div id="contact" class="hidden form">
+  <h2>Contact Us</h2>
+
+  <input placeholder="Your Name">
+  <input placeholder="Your Email">
+  <input placeholder="Message">
+
+  <button onclick="alert('Message sent!')">Send</button>
+</div>
+<div id="faq" class="hidden form">
+  <h2>FAQ</h2>
+
+  <p><b>Q: How long is shipping?</b><br>
+  A: 3-7 business days.</p>
+
+  <p><b>Q: Can I return items?</b><br>
+  A: Yes, within 7 days.</p>
+
+  <p><b>Q: What payment methods?</b><br>
+  A: GCash, COD, Bank Transfer.</p>
+</div>
+
+<script>
+  let currentUser = null;
+let cart = [];
+let users = [];
+
+
+function show(id){
+ 
+  document.querySelectorAll('.form, #shop').forEach(element => element.classList.add('hidden'));
+ 
+  document.getElementById(id).classList.remove('hidden');
+}
+
+
+
+function add(btn, name, price){
+  let sizeDropdown = btn.parentElement.querySelector('.size');
+
+  if(!sizeDropdown){
+    alert("Size selector not found");
+    return;
+  }
+
+  let size = sizeDropdown.value;
+
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let existing = cart.find(item => item.name === name && item.size === size);
+
+  if(existing){
+    existing.qty += 1;
+  } else {
+    cart.push({name, price, size, qty: 1});
+  }
+
+  display();
+}
+
+
+function display(){
+  let html = '';
+  let total = 0;
+
+  cart.forEach((item,i)=>{
+    total += item.price * item.qty;
+
+    html += `
+      ${item.name} (${item.size}) - ₱${item.price} x ${item.qty}
+      <button onclick="changeQty(${i}, -1)">-</button>
+      <button onclick="changeQty(${i}, 1)">+</button>
+      <button onclick="removeItem(${i})">X</button>
+      <br>
+    `;
+  });
+
+  document.getElementById('items').innerHTML = html;
+  document.getElementById('total').innerText = "Total: ₱"+total;
+}
+function changeQty(i, change){
+  cart[i].qty += change;
+
+  if(cart[i].qty <= 0){
+    cart.splice(i,1);
+  }
+
+  display();
+}
+
+
+function removeItem(i){
+  cart.splice(i,1);
+  display();
+}
+
+
+function checkout(){
+
+  
+  if(!currentUser){
+    alert("Please login first before placing an order");
+    show('login');
+    return;
+  }
+
+  let n = document.getElementById('Full Name').value;
+  let a = document.getElementById('Address').value;
+  let p = document.getElementById('Phone Number').value;
+
+  if(!n || !a || !p){
+    alert("Fill out all fields");
+    return;
+  }
+
+  if(cart.length === 0){
+    alert("Your cart is empty");
+    return;
+  }
+
+  alert("Order placed successfully!");
+
+  cart = [];
+  display();
+}
+
+
+function signup(){
+  users.push({
+    u:suser.value,
+    p:spass.value
+  });
+  alert("Account created");
+}
+
+function login(){
+  let f = users.find(x=>x.u==luser.value && x.p==lpass.value);
+
+  if(f){
+    currentUser = f;
+    alert("Login success");
+  } else {
+    alert("Invalid");
+  }
+
+}
+
+
+function filter(cat){
+  
+  document.getElementById('shop').classList.remove('hidden');
+  
+  document.querySelectorAll('.form').forEach(element => element.classList.add('hidden'));
+
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display = (cat=='all'||c.dataset.cat==cat) ? 'block':'none';
+  });
+}
+</script>
+
+</body>
+</html>
